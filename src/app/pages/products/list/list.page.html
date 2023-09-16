@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Produtos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list class="ion-padding pl-0">
+    <ion-item *ngFor="let product of products" detail="true" [routerLink]="['/product/view/' + product.id]">
+      <ion-thumbnail slot="start">
+        <img src="{{ api }}/products/image/{{ product.image1 }}" alt="avatar" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ product.name }}</h2>
+        <ion-badge color="success">{{ product.price | currency }}</ion-badge>
+        <p>
+          <ion-text>
+            <strong>{{ product.category?.name }}</strong>
+          </ion-text>
+        </p>
+
+        <p>
+          <ion-text color="danger">
+            <strong>Estoque disponível: {{ product.quantity }}</strong>
+          </ion-text>
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
