@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Visualizar Produto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <swiper-container>
+    <swiper-slide *ngIf="image1 !== ''">
+      <img [src]="image1">
+    </swiper-slide>
+    <swiper-slide *ngIf="image2 !== ''">
+      <img [src]="image2">
+    </swiper-slide>
+  </swiper-container>
+
+  <div class="ion-padding">
+    <h2>
+      <strong>{{ product.name }}</strong>
+    </h2>
+    
+    <hr>
+
+    <h4>
+      <ion-badge color="success size-badge">{{ product.price | currency }}</ion-badge>  
+    </h4>
+
+    <p>
+      <ion-text>
+        <strong>{{ product.category?.name }}</strong>
+      </ion-text>
+    </p>
+
+    <p>
+      <ion-text color="danger">
+        <strong>Estoque disponível: {{ product.quantity }}</strong>
+      </ion-text>
+    </p>
+
+    <p class="ion-text-justify text-paragraph">{{ product.description }}</p>
+  </div>
+  
+</ion-content>

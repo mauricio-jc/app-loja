@@ -14,7 +14,7 @@ export class ProductsService {
   constructor(private httpClient: HttpClient) {
     this.headers = {
       headers: new HttpHeaders({
-        'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTWF1csOtY2lvIiwiZW1haWwiOiJtYXVyaWNpb2MuYmlsZXNzaW1vQGdtYWlsLmNvbSIsInN1YiI6NywiaWF0IjoxNjk0ODY1NjgxLCJleHAiOjE2OTc0NTc2ODF9.QT_3CtaY3kUC2-0g6cL8pR4IPxC_NZB1t5wYN1aZYEA`
+        'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTWF1csOtY2lvIiwiZW1haWwiOiJtYXVyaWNpb2MuYmlsZXNzaW1vQGdtYWlsLmNvbSIsInN1YiI6MSwiaWF0IjoxNjk0OTE0NDc5LCJleHAiOjE2OTc1MDY0Nzl9.owZKSL0fQPSqyStPDrYX1a6tTUo1j3WUvj8lZwGXIIc`
       })
     }
   }

@@ -1,4 +1,8 @@
-import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
+import {
+  NgModule,
+  DEFAULT_CURRENCY_CODE,
+  LOCALE_ID
+} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
