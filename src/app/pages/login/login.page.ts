@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { LoadingController, NavController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
 import { UsersService } from 'src/app/services/users.service';
@@ -14,10 +13,11 @@ export class LoginPage implements OnInit {
   loginForm!: FormGroup;
   isToastOpen: boolean = false;
   message: string = "";
+  passwordType: string = 'password';
+  passwordIcon: string = 'eye-outline';
 
   constructor(
     private authService: AuthService,
-    private router: Router,
     private usersService: UsersService,
     private loadingCtrl: LoadingController,
     private navController: NavController
@@ -54,7 +54,8 @@ export class LoginPage implements OnInit {
   }
 
   showHidePassword () {
-    alert('Clicou');
+    this.passwordType = this.passwordType === 'text' ? 'password' : 'text';
+    this.passwordIcon = this.passwordIcon === 'eye-outline' ? 'eye-off-outline' : 'eye-outline';
   }
 
   async login() {
