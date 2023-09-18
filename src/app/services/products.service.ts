@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { Product } from '../interfaces/product.interface';
+import { UsersService } from './users.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,10 +12,13 @@ export class ProductsService {
   private api: string = environment.api;
   private headers: Object = {};
 
-  constructor(private httpClient: HttpClient) {
+  constructor(
+    private httpClient: HttpClient,
+    private usersService: UsersService
+  ) {
     this.headers = {
       headers: new HttpHeaders({
-        'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiTWF1csOtY2lvIiwiZW1haWwiOiJtYXVyaWNpb2MuYmlsZXNzaW1vQGdtYWlsLmNvbSIsInN1YiI6MSwiaWF0IjoxNjk0OTE0NDc5LCJleHAiOjE2OTc1MDY0Nzl9.owZKSL0fQPSqyStPDrYX1a6tTUo1j3WUvj8lZwGXIIc`
+        'Authorization': `Bearer ${this.usersService.getAccessToken()}`
       })
     }
   }

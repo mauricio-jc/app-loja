@@ -1,0 +1,59 @@
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <div class="text-center">
+      <ion-icon name="storefront-outline" class="icon-store" color="primary"></ion-icon>
+      <h1 class="title">Acessar sua conta</h1>
+    </div>
+
+    <form (ngSubmit)="login()" [formGroup]="loginForm" #formDir="ngForm">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title class="text-center">Login</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <ion-item class="ion-no-padding">
+            <ion-icon name="person-outline" class="ion-margin" color="primary"></ion-icon>
+            <ion-input
+              formControlName="username"
+              placeholder="Usuário"
+            ></ion-input>
+          </ion-item>
+          <ion-text color="danger" *ngIf="username.invalid && formDir.submitted">
+            Preencha este campo
+          </ion-text>
+
+          <br>
+
+          <ion-item class="ion-no-padding">
+            <ion-icon name="lock-closed-outline" class="ion-margin" color="primary"></ion-icon>
+            <ion-input
+              formControlName="password"
+              placeholder="Senha"
+              type="password"
+            ></ion-input>
+            <ion-icon slot="end" name="eye-outline" (click)="showHidePassword()"></ion-icon>
+          </ion-item>
+          <ion-text color="danger" *ngIf="password.invalid && formDir.submitted">
+            Preencha este campo
+          </ion-text>
+
+          <div class="link">
+            <a href="#">Cadastre-se</a>
+          </div>
+
+          <br>
+
+          <ion-button type="submit" expand="full" size="large">Entrar</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </form>
+  </div>
+
+  <ion-toast
+    [isOpen]="isToastOpen"
+    [message]="message"
+    [duration]="5000"
+    (didDismiss)="setOpen()"
+  ></ion-toast>
+</ion-content>
