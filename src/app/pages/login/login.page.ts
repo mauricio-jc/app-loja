@@ -75,7 +75,7 @@ export class LoginPage implements OnInit {
         await this.closeLoading();
         this.navController.navigateRoot(['/home'])
       },
-      error: async (responseError) => {
+      error: async () => {
         await this.closeLoading();
         this.isToastOpen = true;
         this.message = "Usuário ou senha incorretos";
