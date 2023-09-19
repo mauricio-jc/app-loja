@@ -1,19 +1,29 @@
-.backgroud {
-  --background: #3880ff !important;
+.div1 {
+  height: 50%;
+  background-color: #3880ff;
+}
+
+.div2 {
+  height: 50%;
+  background-color: #fff;
 }
 
 #container {
-  padding-top: 10%;
+  width: 100%;
+  padding-top: 20%;
+  position: fixed;
+  top: 0;
 }
 
 .icon-store {
   font-size: 80px;
+  color: #fff;
 }
 
 .title {
   margin-top: 0;
   margin-bottom: 40px;
-  color: #3880ff;
+  color: #fff;
 }
 
 .link {

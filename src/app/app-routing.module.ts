@@ -16,6 +16,12 @@ const routes: Routes = [
     canActivate: [LoginGuard]
   },
   {
+    path: 'signup',
+    loadChildren: () => import('./pages/signup/signup.module').then( m => m.SignupPageModule),
+    canLoad: [LoginGuard],
+    canActivate: [LoginGuard]
+  },
+  {
     path: '',
     canLoad: [AuthGuard],
     canActivate: [AuthGuard],
