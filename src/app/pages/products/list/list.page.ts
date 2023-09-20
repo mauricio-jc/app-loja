@@ -33,6 +33,11 @@ export class ListPage implements OnInit {
     await this.loadingCtrl.dismiss();
   }
 
+  async handleRefresh(event: any) {
+    await this.listAll();
+    event.target.complete();
+  }
+
   async listAll() {
     await this.showLoading();
 
